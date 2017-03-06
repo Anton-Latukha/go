@@ -4,16 +4,17 @@ import "fmt"
 
 func main() {
   for i:=0 ; i<2 ; i++ {
+    fmt.Println("String",i + 1,":")
     var name string
     fmt.Scanf("%s", &name)
     fmt.Println("Hello!", name)
   }
-  fmt.Println("Now, say number!")
   
+  fmt.Println("Now, send me a number!")
   var number int
   fmt.Scanf("%d", &number)
   switch number {
-    case 0: fmt.Println("Zero")
+    case 0: fmt.Print("Zero")
     case 1: fmt.Println("One")
     case 2: fmt.Println("Two")
     case 3: fmt.Println("Three")
