@@ -11,7 +11,7 @@ func main() {
   fmt.Println("Now, say number!")
   
   var number int
-  fmt.Scanf("%i", &number)
+  fmt.Scanf("%d", &number)
   switch number {
     case 0: fmt.Println("Zero")
     case 1: fmt.Println("One")
