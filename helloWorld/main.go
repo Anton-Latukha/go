@@ -23,5 +23,6 @@ func main() {
     case 7: fmt.Println("Seven")
     case 8: fmt.Println("Eight")
     case 9: fmt.Println("Nine")
+    default: fmt.Println("What I've got is not a number")
   }
 }
