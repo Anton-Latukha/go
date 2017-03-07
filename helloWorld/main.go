@@ -3,18 +3,21 @@ package main
 import "fmt"
 
 func main() {
+  
+  // Loop section
   for i:=0 ; i<2 ; i++ {
-    fmt.Println("String",i + 1,":")
+    fmt.Print("String",i + 1,":")
     var name string
     fmt.Scanf("%s", &name)
     fmt.Println("Hello!", name)
   }
   
+  // Switch section
   fmt.Println("Now, send me a number!")
   var number int
   fmt.Scanf("%d", &number)
   switch number {
-    case 0: fmt.Print("Zero")
+    case 0: fmt.Println("Zero")
     case 1: fmt.Println("One")
     case 2: fmt.Println("Two")
     case 3: fmt.Println("Three")
@@ -26,4 +29,7 @@ func main() {
     case 9: fmt.Println("Nine")
     default: fmt.Println("What I've got is not a number")
   }
+  
+  // Arrays/Slices
+  month := [...]string {1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 8:"August", 9:"September", 10:"October", 11:"November", 12:"December"}
 }
