@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "encoding/binary"
+import "bytes"
 
 func main() {
 
@@ -13,14 +14,14 @@ func main() {
   }
   
   number := uint32(N)
-  var binBuf [32]byte
-  binLen := PutUvarint(binBuf, number) // int
+  var binBuf bytes.Buffer
+  binLen := binary.PutUvarint(binBuf.Buffer(), number) // int
   
   yesBitPositionsArr := [33]int
-  yesBitPositions := yesBitPositionsArr[]
+  yesBitPositions := yesBitPositionsArr[:]
   var bitPositionsCell int
   
-  for i:=0 i<(binLen-1) i+1 {
+  for i:=0; i<(binLen-1); i+1 {
     
     if binBuf[i] == 1 {
       
