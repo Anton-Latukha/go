@@ -15,13 +15,22 @@ func main() {
   
   number := uint32(N)
   var binBuf bytes.Buffer
-  binLen := binary.PutUvarint(binBuf.Buffer(), number) // int
+  //binLen := binary.PutUvarint(binBuf.Write([]byte()), uint64(number)) // int
   
-  yesBitPositionsArr := [33]int
+  //var binArr [32]byte
+  
+  err := binary.Write(&binBuf, binary.LittleEndian, N)
+  if err != nil {
+    fmt.Println("binary.Write failed:", err)
+  }
+  
+  binLen := len(binBuf)
+  
+  var yesBitPositionsArr [33]int
   yesBitPositions := yesBitPositionsArr[:]
   var bitPositionsCell int
   
-  for i:=0; i<(binLen-1); i+1 {
+  for i:=0; i<(binLen-1); i++ {
     
     if binBuf[i] == 1 {
       
